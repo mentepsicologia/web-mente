@@ -751,3 +751,19 @@ h1, h2, .statement, .footer__tagline { text-wrap: balance; }
   color: var(--verde);
   opacity: .55;
 }
+
+/* Imágenes de los valores */
+.values--numbered > div { border-top: 0; padding-top: 0; }
+.values__img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 0 auto 1.5rem;
+}
+.values--numbered .values__num {
+  border-top: 1px solid var(--verde);
+  padding-top: 1.25rem;
+}
