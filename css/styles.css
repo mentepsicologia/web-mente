@@ -168,13 +168,9 @@ p { margin: 0 0 1em; }
     width: 4px; height: 4px;
     border-radius: 50%;
     background: #A39A62;
-    margin: 0 clamp(.6rem, 3vw, 1rem);
+    margin: 0 clamp(.45rem, 2.4vw, 1rem);
   }
-  .nav a { font-size: .95rem; letter-spacing: 0; white-space: nowrap; }
-}
-@media (max-width: 370px) {
-  .nav a { font-size: .85rem; }
-  .nav li + li::before { margin: 0 .5rem; }
+  .nav a { font-size: clamp(.78rem, 3.55vw, .95rem); letter-spacing: 0; white-space: nowrap; }
 }
 
 /* ---------- Hero ---------- */
