@@ -1392,3 +1392,28 @@ html.is-locked { overflow: hidden; }
 
 .nowrap { white-space: nowrap; }
 .profile__text p + p { margin-top: 1rem; }
+
+/* PORTADA · Terapia online: centrado y sutil, columnas separadas por líneas finas */
+.online { padding-block: clamp(3rem, 6vw, 4.25rem); }
+.online .section-title { margin-bottom: 1rem; }
+.online__lead { max-width: 52ch; margin: 0 auto; font-size: .95rem; }
+.online__cols {
+  list-style: none;
+  margin: clamp(1.75rem, 3.5vw, 2.5rem) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.online__cols li { padding: .25rem clamp(1rem, 2.5vw, 2rem); }
+.online__cols li + li { border-left: 1px solid rgba(78, 91, 92, .3); }
+.online__cols h3 { font-size: 1.25rem; font-weight: 330; font-style: italic; margin-bottom: .6rem; }
+.online__cols p { font-size: .88rem; margin: 0 auto; max-width: 24ch; }
+@media (max-width: 860px) {
+  .online__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2rem; }
+  .online__cols li:nth-child(3) { border-left: 0; }
+}
+@media (max-width: 520px) {
+  .online__cols { grid-template-columns: 1fr; row-gap: 0; }
+  .online__cols li { padding: 1.25rem 0; }
+  .online__cols li + li { border-left: 0; border-top: 1px solid rgba(78, 91, 92, .3); }
+}
