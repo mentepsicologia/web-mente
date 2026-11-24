@@ -7,6 +7,9 @@
 # añádela aquí y también a sitemap.xml.
 cd "$(dirname "$0")"
 
+# Versión de CSS/JS: cambia cuando cambian, para que el navegador no use la copia antigua
+V=$(cat css/styles.css js/main.js | md5 | cut -c1-8)
+
 build() { # archivo  body  menú-activo  título  descripción  [noindex]
   local file="$1" cur="$3" robots="index, follow" path="$1"
   [ "$file" = "index.html" ] && path=""
@@ -14,6 +17,7 @@ build() { # archivo  body  menú-activo  título  descripción  [noindex]
   sed -e "s#{{TITLE}}#$4#g" -e "s#{{DESC}}#$5#g" -e "s#{{ROBOTS}}#$robots#" -e "s#{{PATH}}#$path#g" partials/head.html \
     | sed -e "s|{{CUR_${cur}}}| aria-current=\"page\"|" -e 's|{{CUR_[a-z]*}}||g' > "$file"
   cat "partials/body/$2" partials/foot.html >> "$file"
+  sed -i '' "s#{{V}}#$V#g" "$file"
 }
 
 build index.html          index.html     none \
