@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&display=swap">
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,401,500,600&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=cec0ea7f">
+  <link rel="stylesheet" href="css/styles.css?v=e83d2a91">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -199,7 +199,7 @@
             <p>Acordamos día y hora y empezamos el proceso a tu ritmo.</p>
           </li>
         </ol>
-        <a class="btn btn--dark" href="contacto.html">¿Empezamos?</a>
+        <a class="btn btn--dark" href="#contacto">¿Empezamos?</a>
       </div>
     </section>
 
@@ -262,35 +262,86 @@
 
     <!-- ===== DUDAS ===== -->
     <section class="section section--crema">
-      <div class="container">
-        <span class="eyebrow">Dudas</span>
-        <h2 class="section-title">Preguntas <em>frecuentes</em></h2>
-        <div class="faq faq--left">
-          <details>
-            <summary>¿Cómo funciona la terapia online?</summary>
-            <p>Las sesiones se hacen por videollamada, desde el lugar que tú elijas. [Completar: plataforma que usáis, duración de la sesión.]</p>
-          </details>
-          <details>
-            <summary>¿Es igual de eficaz que la terapia presencial?</summary>
-            <p>Los estudios muestran que la terapia online tiene una eficacia comparable a la presencial en la mayoría de casos. [Revisar texto.]</p>
-          </details>
-          <details>
-            <summary>¿Qué es EMDR?</summary>
-            <p>[Texto pendiente]</p>
-          </details>
-          <details>
-            <summary>¿En qué consiste la llamada gratuita?</summary>
-            <p>[Texto pendiente]</p>
-          </details>
+      <div class="container faq-home">
+        <div class="faq-home__intro">
+          <span class="eyebrow">Dudas</span>
+          <h2 class="section-title">Preguntas <em>frecuentes</em></h2>
+          <p>Resolvemos las dudas más habituales antes de empezar. Si no encuentras la tuya, escríbenos.</p>
+          <a class="btn btn--outline" href="dudas.html">Ver todas las dudas</a>
         </div>
-        <p style="margin-top:2.5rem"><a class="btn btn--outline" href="dudas.html">Ver todas las dudas</a></p>
+        <div class="faq faq--numbered">
+            <details>
+              <summary><span class="faq__num">01</span><span class="faq__q">¿Cómo funciona la terapia online?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+              <div class="faq__a"><p>Las sesiones se hacen por videollamada, desde el lugar que tú elijas. [Completar: plataforma que usáis, duración de la sesión.]</p></div>
+            </details>
+            <details>
+              <summary><span class="faq__num">02</span><span class="faq__q">¿Es igual de eficaz que la terapia presencial?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+              <div class="faq__a"><p>Los estudios muestran que la terapia online tiene una eficacia comparable a la presencial en la mayoría de casos. [Revisar texto.]</p></div>
+            </details>
+            <details>
+              <summary><span class="faq__num">03</span><span class="faq__q">¿Qué es EMDR?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+              <div class="faq__a"><p>[Texto pendiente]</p></div>
+            </details>
+            <details>
+              <summary><span class="faq__num">04</span><span class="faq__q">¿En qué consiste la llamada gratuita?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+              <div class="faq__a"><p>[Texto pendiente]</p></div>
+            </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="section section--crema section--divided" id="contacto">
+      <div class="container contact-layout">
+        <aside class="contact-aside">
+          <div class="scard scard--verde scard--static contact-card">
+            <svg class="scard__pattern" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="34" stroke-linecap="round"><path d="M120 -20 C 140 120, 60 200, -20 260"/><path d="M220 -20 C 220 110, 300 170, 420 190"/><path d="M60 520 C 110 400, 240 360, 420 420"/></g></svg>
+            <span class="scard__tag">Hablemos</span>
+            <p class="contact-card__title">Tu primera llamada es <em>gratuita</em></p>
+            <dl class="contact-info">
+              <dt>Teléfono</dt>
+              <dd><a href="tel:+34664897314">+34 664 89 73 14</a></dd>
+              <dt>Email</dt>
+              <dd><a href="mailto:hola@mentepsicologiaonline.com">hola@mentepsicologiaonline.com</a></dd>
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/mente_psicologia/" target="_blank" rel="noopener">@mente_psicologia</a></dd>
+            </dl>
+          </div>
+        </aside>
+
+        <div class="contact-main">
+            <form class="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+              <input type="hidden" name="access_key" value="9c6c33f6-89d9-48c4-aebe-964da4d72cee">
+              <input type="hidden" name="subject" value="Nuevo mensaje desde la portada de la web de Mente">
+              <input type="hidden" name="from_name" value="Web Mente Psicología">
+              <input type="checkbox" name="botcheck" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <h2 class="form__title form__full">Cuéntanos qué te <em>trae</em></h2>
+            <p class="form__intro form__full">Déjanos tus datos y te contactaremos para agendar tu primera llamada gratuita, sin compromiso.</p>
+            <label>Nombre *
+              <input type="text" name="Nombre" autocomplete="name" required>
+            </label>
+            <label>Teléfono *
+              <input type="tel" name="Teléfono" autocomplete="tel" required>
+            </label>
+            <label class="form__full">Email *
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label class="form__full">Cuéntanos brevemente qué te trae
+                <textarea name="Mensaje"></textarea>
+              </label>
+              <label class="check form__full">
+                <input type="checkbox" name="Política de privacidad" value="Aceptada" required>
+                <span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span>
+              </label>
+              <button class="form__full btn btn--terracota" type="submit">Enviar mensaje</button>
+              <p class="form__msg form__full" role="status" hidden>Gracias, hemos recibido tu mensaje. Te contestaremos lo antes posible.</p>
+              <p class="form__msg form__msg--error form__full" role="alert" hidden>No se ha podido enviar el mensaje. Inténtalo de nuevo o escríbenos a <a href="mailto:hola@mentepsicologiaonline.com">hola@mentepsicologiaonline.com</a>.</p>
+            </form>
+        </div>
       </div>
     </section>
   </main>
 
-  <section class="cta-band">
-    <a href="contacto.html">Agenda tu llamada gratuita <span aria-hidden="true">→</span></a>
-  </section>
 
   <footer class="site-footer">
     <div class="container">
@@ -315,6 +366,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=cec0ea7f"></script>
+  <script src="js/main.js?v=e83d2a91"></script>
 </body>
 </html>

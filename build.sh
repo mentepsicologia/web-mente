@@ -46,6 +46,9 @@ build cookies.html        legal-cookies.html    none "Política de Cookies | Men
 build aviso-legal.html    legal-aviso.html      none "Aviso Legal | Mente Psicología Online" "Aviso legal de Mente Psicología Online." noindex
 build 404.html            404.html              none "Página no encontrada | Mente Psicología Online" "La página que buscas no existe." noindex
 
+# Portada: el formulario de contacto sustituye a la franja "Agenda tu llamada gratuita"
+sed -i '' '/<section class="cta-band">/,/<\/section>/d' index.html
+
 # La 404 puede mostrarse en cualquier ruta: rutas absolutas para que cargue el estilo
 sed -i '' 's#<head>#<head>\n  <base href="/">#' 404.html
 
