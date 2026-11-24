@@ -789,7 +789,17 @@ h1, h2, .statement, .footer__tagline { text-wrap: balance; }
    PORTADA · "¿En qué podemos ayudarte?" en franjas en movimiento
    ========================================================== */
 .section--luz { background: var(--luz-suave); }
-.help { overflow: hidden; padding-block: clamp(3rem, 6vw, 4.5rem); }
+.help { overflow: hidden; padding-block: clamp(3.5rem, 7vw, 5rem); }
+
+/* Sección que sigue a otra del mismo color: línea fina de separación */
+.section--divided { padding-top: 0; }
+.section--divided::before {
+  content: "";
+  display: block;
+  width: calc(min(var(--max-w), 100%) - 2 * var(--gutter));
+  margin: 0 auto clamp(3rem, 6vw, 4.5rem);
+  border-top: 1px solid rgba(78, 91, 92, .3);
+}
 .help .section-title { margin-bottom: 1.75rem; }
 .help .btn { margin-top: 1.75rem; }
 
@@ -834,4 +844,142 @@ h1, h2, .statement, .footer__tagline { text-wrap: balance; }
   .marquee { flex-wrap: wrap; justify-content: center; -webkit-mask-image: none; mask-image: none; }
   .marquee__track { animation: none; flex-wrap: wrap; justify-content: center; }
   .marquee__track[aria-hidden] { display: none; }
+}
+
+/* ==========================================================
+   PORTADA · Servicios en tres columnas
+   ========================================================== */
+.services-intro {
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  max-width: 30ch;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+.service {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-top: 1px solid var(--verde);
+  padding-top: 1.5rem;
+}
+.service__num {
+  font-family: var(--font-serif);
+  font-size: .95rem;
+  margin-bottom: 1.25rem;
+  opacity: .6;
+}
+.service h3 { font-size: clamp(1.35rem, 2vw, 1.65rem); margin-bottom: .9rem; }
+.service p { flex: 1; font-size: .95rem; max-width: 34ch; }
+.service__more {
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-top: .5rem;
+}
+.service__more span { display: inline-block; transition: transform .3s; }
+.service:hover .service__more span { transform: translateX(6px); }
+.service::before { /* línea verde Luz que crece al pasar el ratón */
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: var(--luz);
+  margin-top: calc(-1.5rem - 1.5px);
+  margin-bottom: calc(1.5rem - .5px);
+  transition: width .5s cubic-bezier(.2, .6, .2, 1);
+}
+.service:hover::before { width: 100%; }
+
+@media (max-width: 860px) {
+  .services { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================
+   PORTADA · Servicios en tarjetas de color
+   Inspiradas en las piezas de Instagram del manual (pág. 53-54)
+   ========================================================== */
+.scards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+.scard {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(380px, 38vw, 480px);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform .5s cubic-bezier(.2, .6, .2, 1), box-shadow .5s;
+}
+.scard:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(40, 50, 50, .14); }
+
+.scard--salvia    { background: var(--salvia);    color: var(--verde); }
+.scard--verde     { background: var(--verde);     color: var(--crema); }
+.scard--terracota { background: var(--terracota); color: var(--crema); }
+
+/* Ramas del isotipo, muy sutiles, como en las piezas del manual */
+.scard__pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  color: currentColor;
+  opacity: .07;
+  transition: opacity .5s, transform 1.2s cubic-bezier(.2, .6, .2, 1);
+}
+.scard:hover .scard__pattern { opacity: .12; transform: scale(1.05); }
+
+.scard__tag {
+  align-self: flex-start;
+  font-size: .68rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: .35em 1em;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-pill);
+  opacity: .85;
+}
+.scard h3 {
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+  margin-top: auto;
+  margin-bottom: 1rem;
+  max-width: 14ch;
+}
+.scard p { font-size: .92rem; max-width: 30ch; margin-bottom: 2rem; opacity: .9; }
+
+.scard__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.scard__logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+.scard__arrow {
+  display: grid;
+  place-items: center;
+  width: 2.4rem; height: 2.4rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  transition: transform .4s, background-color .4s, color .4s;
+}
+.scard:hover .scard__arrow { transform: translateX(4px); }
+
+@media (max-width: 860px) {
+  .scards { grid-template-columns: 1fr; }
+  .scard { min-height: 320px; }
 }
