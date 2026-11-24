@@ -26,7 +26,7 @@ build servicios.html      servicios.html servicios \
 
 build sobre-nosotras.html sobre.html     sobre \
   "Sobre Nosotras · Psicólogas Sanitarias Online | Mente" \
-  "Conoce al equipo de Mente: psicólogas sanitarias colegiadas que acompañan desde la raíz, con un enfoque científico, integrador y cercano."
+  "Mente es un espacio de psicoterapia online cercano y libre de juicios. Enfoque integrador basado en la evidencia: IFS, EMDR y terapia somática."
 
 build dudas.html          dudas.html     dudas \
   "Preguntas Frecuentes sobre Terapia Online | Mente Psicología" \
