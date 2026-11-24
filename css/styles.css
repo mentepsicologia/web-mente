@@ -1127,3 +1127,89 @@ section[id] { scroll-margin-top: 80px; }
 .topic-panel__link:hover span { transform: translateX(5px); }
 .section-title + .topic-hint { margin-top: -2rem; }
 .topic-hint { font-size: .85rem; opacity: .75; margin-bottom: 2rem; }
+
+/* Menú: mismo efecto que los temas, las letras se vuelven verde oliva */
+.nav a { transition: color .35s; }
+.nav a::after { display: none; }
+.nav a:hover,
+.nav a[aria-current="page"] { color: #7A7140; }
+
+/* ==========================================================
+   PÁGINA DUDAS
+   ========================================================== */
+.faq-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) 1.6fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+.faq-aside { position: sticky; top: 110px; }
+.faq-card { min-height: 0; gap: 0; }
+.faq-card .scard__tag { margin-bottom: 3rem; }
+.faq-card .faq-card__title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+  line-height: 1.25;
+  margin-bottom: .75rem;
+}
+.faq-card p { font-size: .92rem; }
+.faq-card .btn { align-self: flex-start; margin-top: 1rem; }
+
+.faq-group {
+  font-size: clamp(1.35rem, 2vw, 1.6rem);
+  margin: 3.5rem 0 1.25rem;
+}
+.faq-group:first-child { margin-top: 0; }
+
+/* Preguntas numeradas */
+.faq--numbered { max-width: none; margin: 0; border-top: 1px solid rgba(78, 91, 92, .35); }
+.faq--numbered details { border-bottom: 1px solid rgba(78, 91, 92, .35); }
+.faq--numbered summary {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 2.2rem;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.35rem 0;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  transition: color .35s;
+}
+.faq--numbered summary::after { display: none; }
+.faq--numbered summary:hover,
+.faq--numbered details[open] summary { color: #7A7140; }
+.faq__num { font-size: .85rem; opacity: .55; }
+.faq__icon {
+  position: relative;
+  width: 2.2rem; height: 2.2rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+.faq__icon::before,
+.faq__icon::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: .75rem; height: 1px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform .4s cubic-bezier(.2, .6, .2, 1);
+}
+.faq__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+.faq--numbered details[open] .faq__icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+
+.faq__a { overflow: hidden; }
+.faq__a p {
+  margin: 0 0 1.5rem calc(2.5rem + 1rem);
+  padding-left: 1rem;
+  border-left: 2px solid var(--luz);
+  max-width: 60ch;
+}
+
+@media (max-width: 860px) {
+  .faq-layout { grid-template-columns: 1fr; }
+  .faq-aside { position: static; order: 2; }
+  .faq--numbered summary { grid-template-columns: 2rem 1fr 2rem; gap: .75rem; }
+  .faq__a p { margin-left: 0; }
+}
+.faq--numbered summary { font-weight: 330; }
+.faq-group { font-weight: 400; }

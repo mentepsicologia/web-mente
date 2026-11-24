@@ -84,3 +84,26 @@ topicBtns.forEach((btn) => {
     }
   });
 });
+
+// Preguntas frecuentes: apertura y cierre suaves
+document.querySelectorAll('.faq--numbered details').forEach((det) => {
+  const summary = det.querySelector('summary');
+  const content = det.querySelector('.faq__a');
+  if (!summary || !content || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  summary.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (det.dataset.animating) return;
+    det.dataset.animating = '1';
+    const opts = { duration: 450, easing: 'cubic-bezier(.4, 0, .2, 1)' };
+    if (!det.open) {
+      det.open = true;
+      const h = content.scrollHeight;
+      content.animate([{ height: '0px', opacity: 0 }, { height: h + 'px', opacity: 1 }], opts)
+        .onfinish = () => delete det.dataset.animating;
+    } else {
+      const h = content.scrollHeight;
+      content.animate([{ height: h + 'px', opacity: 1 }, { height: '0px', opacity: 0 }], opts)
+        .onfinish = () => { det.open = false; delete det.dataset.animating; };
+    }
+  });
+});
