@@ -614,24 +614,43 @@ p { margin: 0 0 1em; }
   .header-cta { order: 3; margin: 0 0 0 clamp(1.5rem, 3vw, 2.5rem); }
 }
 
-/* En qué podemos ayudarte */
+/* En qué podemos ayudarte: lista en columnas con líneas finas */
+.topics-wrap { align-items: start; grid-template-columns: 1fr 1.35fr; }
+@media (max-width: 860px) { .topics-wrap { grid-template-columns: 1fr; } }
 .topics {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2.5rem;
+  border-top: 1px solid var(--verde);
 }
 .topics li {
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  padding: .55em 1.3em;
-  border: 1px solid var(--verde);
-  border-radius: var(--radius-pill);
-  transition: background-color .3s, color .3s;
+  font-weight: 300;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(78, 91, 92, .35);
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  transition: padding-left .3s;
 }
-.topics li:hover { background: var(--verde); color: var(--crema); }
+.topics li::before {
+  content: "";
+  flex: none;
+  width: .45em; height: .45em;
+  border-radius: 50%;
+  background: var(--luz);
+  transition: transform .3s;
+}
+.topics li:hover { padding-left: .4rem; }
+.topics li:hover::before { transform: scale(1.4); }
+
+@media (max-width: 520px) {
+  .topics { grid-template-columns: 1fr; }
+}
 
 /* Cómo empezar */
 .steps {
@@ -714,8 +733,6 @@ h1, h2, .statement, .footer__tagline { text-wrap: balance; }
 /* Números de "Cómo empezar" */
 .steps__num { background: var(--luz); border-color: var(--luz); }
 
-/* Etiquetas de "¿En qué podemos ayudarte?" al pasar el ratón */
-.topics li:hover { background: var(--luz); border-color: var(--luz); color: var(--verde); }
 
 /* Bloque de tarifas */
 .section--terracota-soft { background: var(--luz-suave); }
@@ -766,4 +783,55 @@ h1, h2, .statement, .footer__tagline { text-wrap: balance; }
 .values--numbered .values__num {
   border-top: 1px solid var(--verde);
   padding-top: 1.25rem;
+}
+
+/* ==========================================================
+   PORTADA · "¿En qué podemos ayudarte?" en franjas en movimiento
+   ========================================================== */
+.section--luz { background: var(--luz-suave); }
+.help { overflow: hidden; }
+.help .section-title { margin-bottom: 2.5rem; }
+.help .btn { margin-top: 2.5rem; }
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  padding-block: .6rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.marquee__track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: none;
+  animation: deslizar 55s linear infinite;
+}
+.marquee--reverse .marquee__track { animation-direction: reverse; animation-duration: 65s; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+
+.marquee__track li {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(1.25rem, 2.6vw, 2rem);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+.marquee__track li::after { /* separador: punto verde Luz */
+  content: "";
+  width: .28em; height: .28em;
+  border-radius: 50%;
+  background: var(--luz);
+  margin-inline: .9em;
+  filter: brightness(.85);
+}
+
+@keyframes deslizar { to { transform: translateX(-100%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee { flex-wrap: wrap; justify-content: center; -webkit-mask-image: none; mask-image: none; }
+  .marquee__track { animation: none; flex-wrap: wrap; justify-content: center; }
+  .marquee__track[aria-hidden] { display: none; }
 }
