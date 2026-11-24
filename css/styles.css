@@ -691,3 +691,5 @@ p { margin: 0 0 1em; }
 /* Ajustes finos */
 h1, h2, .statement, .footer__tagline { text-wrap: balance; }
 .team { grid-template-columns: repeat(auto-fill, minmax(240px, 320px)); }
+
+.legal { max-width: 70ch; }
