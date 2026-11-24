@@ -15,7 +15,7 @@ document.querySelectorAll('[data-year]').forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-// Formulario de contacto: envía los mensajes a hola@mentepsicologiaonline.com (FormSubmit)
+// Formulario de contacto: envía los mensajes a hola@mentepsicologiaonline.com (Web3Forms)
 const form = document.querySelector('.form');
 if (form) {
   const ok = form.querySelector('.form__msg:not(.form__msg--error)');
@@ -31,7 +31,7 @@ if (form) {
     const label = btn.textContent;
     btn.textContent = 'Enviando…';
     try {
-      const res = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+      const res = await fetch(form.action, {
         method: 'POST',
         headers: { Accept: 'application/json' },
         body: new FormData(form),

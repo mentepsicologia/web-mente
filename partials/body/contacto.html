@@ -30,13 +30,12 @@
         </aside>
 
         <div class="contact-main">
-            <form class="form" action="https://formsubmit.co/hola@mentepsicologiaonline.com" method="POST" novalidate>
-              <input type="hidden" name="_subject" value="Nuevo mensaje desde la web de Mente">
-              <input type="hidden" name="_template" value="box">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://mentepsicologiaonline.com/contacto.html?enviado=1">
-              <input type="text" name="_honey" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <h2 class="form__title form__full">Cuéntanos qué te <em>trae</em></h2>
+            <form class="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+              <input type="hidden" name="access_key" value="9c6c33f6-89d9-48c4-aebe-964da4d72cee">
+              <input type="hidden" name="subject" value="Nuevo mensaje desde la web de Mente">
+              <input type="hidden" name="from_name" value="Web Mente Psicología">
+              <input type="checkbox" name="botcheck" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <h2 class="form__title form__full">Cuéntanos qué te <em>trae</em></h2>
             <p class="form__intro form__full">Rellena el formulario y te contactaremos para agendar tu primera llamada gratuita. Los campos marcados con * son obligatorios.</p>
             <label>Nombre *
                 <input type="text" name="Nombre" autocomplete="name" required>
