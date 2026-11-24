@@ -26,7 +26,7 @@ build index.html          index.html     none \
 
 build servicios.html      servicios.html servicios \
   "Terapia Online para Adultos y Pareja | Mente Psicología" \
-  "Terapia online individual y de pareja, y grupos de supervisión para psicólogos. Enfoque integrador, en trauma, apego y EMDR. Consulta sin compromiso."
+  "Terapia online individual y de pareja, psicología perinatal y supervisión para psicólogos. Enfoque integrador en trauma, apego y EMDR."
 
 build sobre-nosotras.html sobre.html     sobre \
   "Sobre Nosotras · Psicólogas Sanitarias Online | Mente" \

@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&display=swap">
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,401,500,600&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=e83d2a91">
+  <link rel="stylesheet" href="css/styles.css?v=fbc2f5b8">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -78,16 +78,15 @@
         <span class="eyebrow">Equipo</span>
         <div class="team">
           <article>
-            <div class="team__photo">Foto</div>
-            <h3>[Nombre]</h3>
-            <p class="team__role">Psicóloga sanitaria · Nº colegiada [—]</p>
-            <p>[Texto pendiente] Breve presentación, formación y especialidades.</p>
+            <div class="team__photo" aria-hidden="true"><span>MQ</span></div>
+            <h3>Marta Quetglas Celaya</h3>
+            <p class="team__role">Psicóloga General Sanitaria · <span class="nowrap">Nº de colegiada M-42439</span></p>
+            <button class="team__more" type="button" data-profile="perfil-marta">Saber más sobre mí <span aria-hidden="true">→</span></button>
           </article>
           <article>
-            <div class="team__photo">Foto</div>
-            <h3>[Nombre]</h3>
-            <p class="team__role">Psicóloga sanitaria · Nº colegiada [—]</p>
-            <p>[Texto pendiente] Breve presentación, formación y especialidades.</p>
+            <div class="team__photo" aria-hidden="true"><span>EF</span></div>
+            <h3>Elena Fernández</h3>
+            <p class="team__role">Psicóloga · <span class="nowrap">Nº de colegiada M-42826</span></p>
           </article>
         </div>
       </div>
@@ -118,6 +117,41 @@
         </div>
       </div>
     </section>
+
+    <dialog class="profile" id="perfil-marta" aria-labelledby="perfil-marta-nombre">
+      <div class="profile__inner">
+        <button class="profile__close" type="button" aria-label="Cerrar"><span aria-hidden="true"></span></button>
+        <div class="profile__head">
+          <div class="profile__photo" aria-hidden="true"><span>MQ</span></div>
+          <div>
+            <h2 id="perfil-marta-nombre">Marta Quetglas Celaya</h2>
+            <p class="team__role">Psicóloga General Sanitaria · <span class="nowrap">Nº de colegiada M-42439</span></p>
+          </div>
+        </div>
+
+        <h3 class="profile__label">Sobre mí</h3>
+        <div class="profile__text">
+          <p>Soy Marta, psicóloga general sanitaria, y acompaño a personas que quieren entender lo que les pasa y empezar a sentirse mejor. Estoy especializada en trauma, apego, EMDR y psicología perinatal, y formada también en terapia de pareja, IFS y regulación del sistema nervioso. Aun así, sigo en continua formación y actualización, porque creo que cada historia merece una mirada cuidada.</p>
+          <p>En consulta me adapto a ti: a tu historia, a lo que necesitas y a tu ritmo. Me gusta que las sesiones tengan un rumbo y que sientas que avanzamos hacia lo que te importa, pero sin prisas ni presiones.</p>
+          <p>Para mí lo más importante es que encuentres un espacio seguro, donde puedas contar lo que te pasa con tranquilidad, sabiendo que aquí no hay juicios. Estaré a tu lado durante todo el proceso.</p>
+        </div>
+
+        <h3 class="profile__label">Formación</h3>
+        <ul class="profile__cv">
+            <li><strong>Grado en Psicología</strong><span>Universidad Camilo José Cela</span></li>
+            <li><strong>Máster en Psicología General Sanitaria</strong><span>Universidad Alfonso X el Sabio</span></li>
+            <li><strong>Máster universitario en Salud Mental Perinatal</strong><span>Cuidus y UTAMED</span></li>
+            <li><strong>Experto en psicoterapia integradora, trauma, apego y EMDR</strong><span>Universidad a Distancia de Madrid (UDIMA)</span></li>
+            <li><strong>EMDR Nivel I y II</strong><span>Asociación EMDR</span></li>
+            <li><strong>Entender y explorar el apego</strong><span>Instituto Imaya · Anabel González</span></li>
+            <li><strong>Estrés postraumático y las distintas emociones</strong><span>Instituto Imaya · Anabel González</span></li>
+            <li><strong>Introducción al modelo IFS</strong><span>Acerca de Psicoterapia</span></li>
+            <li><strong>Integrando EMDR e IFS</strong><span>Acerca de Psicoterapia</span></li>
+            <li><strong>Regulación del sistema nervioso: intervenciones polivagales, somáticas y de mindfulness para el trauma, la ansiedad y la regulación emocional</strong><span>PESI</span></li>
+            <li><strong>Terapia de pareja desde una perspectiva integradora: habilidades del terapeuta e intervención</strong><span>Escuela Mirada Integradora</span></li>
+        </ul>
+      </div>
+    </dialog>
   </main>
 
   <section class="cta-band">
@@ -147,6 +181,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=e83d2a91"></script>
+  <script src="js/main.js?v=fbc2f5b8"></script>
 </body>
 </html>

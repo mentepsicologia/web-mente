@@ -129,3 +129,25 @@ document.querySelectorAll('.faq--numbered details').forEach((det) => {
     }
   });
 });
+
+// Sobre nosotras: panel lateral "Saber más sobre mí"
+document.querySelectorAll('[data-profile]').forEach((btn) => {
+  const dlg = document.getElementById(btn.dataset.profile);
+  if (!dlg || typeof dlg.showModal !== 'function') return;
+  const close = () => {
+    dlg.classList.remove('is-open');
+    document.documentElement.classList.remove('is-locked');
+    const done = () => { dlg.close(); btn.focus(); };
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) done();
+    else setTimeout(done, 550);
+  };
+  btn.addEventListener('click', () => {
+    dlg.showModal();
+    document.documentElement.classList.add('is-locked');
+    void dlg.offsetWidth; // fuerza el punto de partida para que se vea el deslizamiento
+    dlg.classList.add('is-open');
+  });
+  dlg.querySelector('.profile__close').addEventListener('click', close);
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
+  dlg.addEventListener('cancel', (e) => { e.preventDefault(); close(); });
+});
