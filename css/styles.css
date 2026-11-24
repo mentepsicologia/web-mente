@@ -151,45 +151,30 @@ p { margin: 0 0 1em; }
 .nav a:hover::after,
 .nav a[aria-current="page"]::after { transform: scaleX(1); }
 
-.nav-toggle {
-  display: none;
-  background: none;
-  border: 0;
-  padding: 8px;
-  cursor: pointer;
-  color: var(--verde);
-}
-
-.nav-toggle span {
-  display: block;
-  width: 24px;
-  height: 1.5px;
-  background: currentColor;
-  margin: 5px 0;
-  transition: transform .25s, opacity .25s;
-}
-
+/* Móvil: los enlaces del menú en una segunda fila, siempre visibles,
+   centrados y separados por puntitos de luz, como los temas de Servicios */
 @media (max-width: 760px) {
-  .nav-toggle { display: block; }
-
-  .nav {
-    position: absolute;
-    top: 100%;
-    left: 0; right: 0;
-    background: var(--salvia);
-    padding: 1rem var(--gutter) 2rem;
-    display: none;
+  .site-header .container { flex-wrap: wrap; min-height: 0; padding-top: .75rem; }
+  .site-header .container .nav {
+    order: 4;
+    flex-basis: 100%;
+    margin: .35rem 0 0;
+    padding: .35rem 0 .75rem;
   }
-
-  .nav.is-open { display: block; }
-
-  .nav ul { flex-direction: column; gap: 1.25rem; }
-
-  .nav a { font-size: 1.25rem; }
-
-  .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-  .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .nav ul { justify-content: center; align-items: center; gap: 0; flex-wrap: nowrap; }
+  .nav li { display: flex; align-items: center; }
+  .nav li + li::before {
+    content: "";
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: #A39A62;
+    margin: 0 clamp(.6rem, 3vw, 1rem);
+  }
+  .nav a { font-size: .95rem; letter-spacing: 0; white-space: nowrap; }
+}
+@media (max-width: 370px) {
+  .nav a { font-size: .85rem; }
+  .nav li + li::before { margin: 0 .5rem; }
 }
 
 /* ---------- Hero ---------- */
@@ -665,10 +650,9 @@ p { margin: 0 0 1em; }
 
 .header-cta { margin-left: auto; margin-right: clamp(1rem, 3vw, 2.5rem); order: 2; }
 .site-header .nav { order: 1; margin-left: auto; }
-.site-header .nav-toggle { order: 3; }
 
 @media (max-width: 760px) {
-  .header-cta { padding: .6em 1.1em; font-size: .68rem; margin-right: .5rem; }
+  .header-cta { padding: .6em 1.1em; font-size: .68rem; margin-right: 0; }
 }
 
 @media (min-width: 761px) {
@@ -1191,10 +1175,16 @@ section[id] { scroll-margin-top: 80px; }
 .topic-hint { font-size: .85rem; opacity: .75; margin-bottom: 2rem; }
 
 /* Menú: mismo efecto que los temas, las letras se vuelven verde oliva */
-.nav a { transition: color .35s; }
+/* Menú: al pasar el ratón la palabra crece un poco y se vuelve verde oliva */
+.nav a {
+  display: inline-block;
+  transform-origin: 50% 60%;
+  transition: color .35s, transform .4s cubic-bezier(.2, .7, .2, 1);
+}
 .nav a::after { display: none; }
 .nav a:hover,
 .nav a[aria-current="page"] { color: #7A7140; }
+.nav a:hover { transform: scale(1.1); }
 
 /* ==========================================================
    PÁGINA DUDAS
