@@ -17,7 +17,12 @@
           <dd><a href="https://www.instagram.com/mente_psicologia/" target="_blank" rel="noopener">@mente_psicologia</a></dd>
         </dl>
 
-        <form class="form" novalidate>
+        <form class="form" action="https://formsubmit.co/hola@mentepsicologiaonline.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde la web de Mente">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://mentepsicologiaonline.com/contacto.html?enviado=1">
+          <input type="text" name="_honey" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <label>Nombre
             <input type="text" name="nombre" autocomplete="name" required>
           </label>
@@ -51,11 +56,12 @@
             <textarea name="mensaje"></textarea>
           </label>
           <label class="check">
-            <input type="checkbox" name="privacidad" required>
+            <input type="checkbox" name="privacidad" value="Aceptada" required>
             <span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span>
           </label>
           <button class="btn btn--dark" type="submit">Enviar</button>
-          <p class="form__msg" hidden>Gracias, hemos recibido tu mensaje. Te contestaremos lo antes posible.</p>
+          <p class="form__msg" role="status" hidden>Gracias, hemos recibido tu mensaje. Te contestaremos lo antes posible.</p>
+          <p class="form__msg form__msg--error" role="alert" hidden>No se ha podido enviar el mensaje. Inténtalo de nuevo o escríbenos a <a href="mailto:hola@mentepsicologiaonline.com">hola@mentepsicologiaonline.com</a>.</p>
         </form>
       </div>
     </section>

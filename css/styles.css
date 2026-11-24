@@ -442,6 +442,9 @@ p { margin: 0 0 1em; }
 .form .check input { width: auto; margin-top: .3rem; }
 
 .form .btn { justify-self: start; }
+.form .btn:disabled { opacity: .6; cursor: wait; }
+.form__honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form__msg--error { color: var(--terracota); }
 
 /* ---------- Footer ---------- */
 .site-footer {

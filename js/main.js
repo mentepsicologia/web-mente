@@ -15,15 +15,37 @@ document.querySelectorAll('[data-year]').forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-// Formulario de contacto: de momento solo evita el envío.
-// Cuando haya servicio de formularios (Formspree, Netlify Forms...), sustituir aquí.
+// Formulario de contacto: envía los mensajes a hola@mentepsicologiaonline.com (FormSubmit)
 const form = document.querySelector('.form');
 if (form) {
-  form.addEventListener('submit', (e) => {
+  const ok = form.querySelector('.form__msg:not(.form__msg--error)');
+  const err = form.querySelector('.form__msg--error');
+  const btn = form.querySelector('button[type="submit"]');
+  if (ok && new URLSearchParams(location.search).has('enviado')) ok.hidden = false;
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const msg = form.querySelector('.form__msg');
-    if (msg) msg.hidden = false;
-    form.reset();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    ok.hidden = true; err.hidden = true;
+    btn.disabled = true;
+    const label = btn.textContent;
+    btn.textContent = 'Enviando…';
+    try {
+      const res = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || String(data.success) === 'false') throw new Error(data.message || res.status);
+      form.reset();
+      ok.hidden = false;
+    } catch (error) {
+      err.hidden = false;
+    } finally {
+      btn.disabled = false;
+      btn.textContent = label;
+    }
   });
 }
 
