@@ -1,0 +1,61 @@
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Contacto</span>
+        <h1>Estamos aquí para <em>acompañarte</em></h1>
+        <p>Cuéntanos brevemente qué te trae y te contactaremos para agendar una primera llamada gratuita.</p>
+      </div>
+    </section>
+
+    <section class="section section--salvia">
+      <div class="container contact-grid">
+        <dl class="contact-info">
+          <dt>Teléfono</dt>
+          <dd><a href="tel:+34664897314">+34 664 89 73 14</a></dd>
+          <dt>Email</dt>
+          <dd><a href="mailto:info@mente-psicologia.com">info@mente-psicologia.com</a></dd>
+          <dt>Instagram</dt>
+          <dd><a href="https://www.instagram.com/mente_psicologia/" target="_blank" rel="noopener">@mente_psicologia</a></dd>
+        </dl>
+
+        <form class="form" novalidate>
+          <label>Nombre
+            <input type="text" name="nombre" autocomplete="name" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>Teléfono
+            <input type="tel" name="telefono" autocomplete="tel">
+          </label>
+          <label>Servicio de interés
+            <select name="servicio">
+              <option>Terapia Online para Adultos</option>
+              <option>Terapia Online de Pareja</option>
+              <option>Grupos de Supervisión para Psicólogos</option>
+              <option>Aún no lo sé</option>
+            </select>
+          </label>
+          <label>¿Cuándo te viene mejor que te contactemos?
+            <input type="text" name="disponibilidad" placeholder="Ej.: mañanas, a partir de las 17 h…">
+          </label>
+          <label>¿Cómo nos has conocido?
+            <select name="origen">
+              <option value="">Selecciona una opción</option>
+              <option>Recomendación</option>
+              <option>Instagram</option>
+              <option>Google</option>
+              <option>Otro</option>
+            </select>
+          </label>
+          <label>Cuéntanos brevemente qué te trae
+            <textarea name="mensaje"></textarea>
+          </label>
+          <label class="check">
+            <input type="checkbox" name="privacidad" required>
+            <span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span>
+          </label>
+          <button class="btn btn--dark" type="submit">Enviar</button>
+          <p class="form__msg" hidden>Gracias, hemos recibido tu mensaje. Te contestaremos lo antes posible.</p>
+        </form>
+      </div>
+    </section>
