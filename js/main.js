@@ -51,16 +51,3 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
   });
 }
 
-// Banner de cookies (solo recuerda la elección; aún no hay cookies de analítica)
-const banner = document.querySelector('.cookie-banner');
-if (banner) {
-  let choice = null;
-  try { choice = localStorage.getItem('mente-cookies'); } catch (e) {}
-  if (!choice) banner.hidden = false;
-  banner.addEventListener('click', (e) => {
-    const btn = e.target.closest('[data-cookies]');
-    if (!btn) return;
-    try { localStorage.setItem('mente-cookies', btn.dataset.cookies); } catch (e) {}
-    banner.hidden = true;
-  });
-}
