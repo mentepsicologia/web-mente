@@ -6,62 +6,78 @@
       </div>
     </section>
 
-    <section class="section section--salvia">
-      <div class="container contact-grid">
-        <dl class="contact-info">
-          <dt>Teléfono</dt>
-          <dd><a href="tel:+34664897314">+34 664 89 73 14</a></dd>
-          <dt>Email</dt>
-          <dd><a href="mailto:hola@mentepsicologiaonline.com">hola@mentepsicologiaonline.com</a></dd>
-          <dt>Instagram</dt>
-          <dd><a href="https://www.instagram.com/mente_psicologia/" target="_blank" rel="noopener">@mente_psicologia</a></dd>
-        </dl>
+    <section class="section section--crema section--divided">
+      <div class="container contact-layout">
+        <aside class="contact-aside">
+          <div class="scard scard--verde scard--static contact-card">
+            <svg class="scard__pattern" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="34" stroke-linecap="round"><path d="M120 -20 C 140 120, 60 200, -20 260"/><path d="M220 -20 C 220 110, 300 170, 420 190"/><path d="M60 520 C 110 400, 240 360, 420 420"/></g></svg>
+            <span class="scard__tag">Hablemos</span>
+            <p class="contact-card__title">Tu primera llamada es <em>gratuita</em></p>
+            <dl class="contact-info">
+              <dt>Teléfono</dt>
+              <dd><a href="tel:+34664897314">+34 664 89 73 14</a></dd>
+              <dt>Email</dt>
+              <dd><a href="mailto:hola@mentepsicologiaonline.com">hola@mentepsicologiaonline.com</a></dd>
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/mente_psicologia/" target="_blank" rel="noopener">@mente_psicologia</a></dd>
+            </dl>
+          </div>
+          <ol class="contact-steps">
+            <li><span>01</span>Nos escribes por el formulario o por email.</li>
+            <li><span>02</span>Te contactamos para agendar una llamada gratuita.</li>
+            <li><span>03</span>Resolvemos tus dudas y vemos si encajamos.</li>
+          </ol>
+        </aside>
 
-        <form class="form" action="https://formsubmit.co/hola@mentepsicologiaonline.com" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="Nuevo mensaje desde la web de Mente">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://mentepsicologiaonline.com/contacto.html?enviado=1">
-          <input type="text" name="_honey" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <label>Nombre
-            <input type="text" name="nombre" autocomplete="name" required>
-          </label>
-          <label>Email
-            <input type="email" name="email" autocomplete="email" required>
-          </label>
-          <label>Teléfono
-            <input type="tel" name="telefono" autocomplete="tel">
-          </label>
-          <label>Servicio de interés
-            <select name="servicio">
-              <option>Terapia Online para Adultos</option>
-              <option>Terapia Online de Pareja</option>
-              <option>Grupos de Supervisión para Psicólogos</option>
-              <option>Aún no lo sé</option>
-            </select>
-          </label>
-          <label>¿Cuándo te viene mejor que te contactemos?
-            <input type="text" name="disponibilidad" placeholder="Ej.: mañanas, a partir de las 17 h…">
-          </label>
-          <label>¿Cómo nos has conocido?
-            <select name="origen">
-              <option value="">Selecciona una opción</option>
-              <option>Recomendación</option>
-              <option>Instagram</option>
-              <option>Google</option>
-              <option>Otro</option>
-            </select>
-          </label>
-          <label>Cuéntanos brevemente qué te trae
-            <textarea name="mensaje"></textarea>
-          </label>
-          <label class="check">
-            <input type="checkbox" name="privacidad" value="Aceptada" required>
-            <span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span>
-          </label>
-          <button class="btn btn--dark" type="submit">Enviar</button>
-          <p class="form__msg" role="status" hidden>Gracias, hemos recibido tu mensaje. Te contestaremos lo antes posible.</p>
-          <p class="form__msg form__msg--error" role="alert" hidden>No se ha podido enviar el mensaje. Inténtalo de nuevo o escríbenos a <a href="mailto:hola@mentepsicologiaonline.com">hola@mentepsicologiaonline.com</a>.</p>
-        </form>
+        <div class="contact-main">
+            <form class="form" action="https://formsubmit.co/hola@mentepsicologiaonline.com" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="Nuevo mensaje desde la web de Mente">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://mentepsicologiaonline.com/contacto.html?enviado=1">
+              <input type="text" name="_honey" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <h2 class="form__title form__full">Cuéntanos qué te <em>trae</em></h2>
+            <p class="form__intro form__full">Rellena el formulario y te contactaremos para agendar tu primera llamada gratuita. Los campos marcados con * son obligatorios.</p>
+            <label>Nombre *
+                <input type="text" name="nombre" autocomplete="name" required>
+              </label>
+              <label>Email *
+                <input type="email" name="email" autocomplete="email" required>
+              </label>
+              <label>Teléfono *
+                <input type="tel" name="telefono" autocomplete="tel" required>
+              </label>
+              <label>Servicio de interés
+                <select name="servicio">
+                  <option>Terapia Online para Adultos</option>
+                  <option>Terapia Online de Pareja</option>
+                  <option>Grupos de Supervisión para Psicólogos</option>
+                  <option>Aún no lo sé</option>
+                </select>
+              </label>
+              <label>¿Cuál es tu disponibilidad?
+                <input type="text" name="disponibilidad" placeholder="Ej.: mañanas, a partir de las 17 h…">
+              </label>
+              <label>¿Cómo nos has conocido?
+                <select name="origen">
+                  <option value="">Selecciona una opción</option>
+                  <option>Recomendación</option>
+                  <option>Instagram</option>
+                  <option>Google</option>
+                  <option>Otro</option>
+                </select>
+              </label>
+              <label class="form__full">Cuéntanos brevemente qué te trae
+                <textarea name="mensaje"></textarea>
+              </label>
+              <label class="check form__full">
+                <input type="checkbox" name="privacidad" value="Aceptada" required>
+                <span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span>
+              </label>
+              <button class="form__full btn btn--terracota" type="submit">Enviar mensaje</button>
+              <p class="form__msg form__full" role="status" hidden>Gracias, hemos recibido tu mensaje. Te contestaremos lo antes posible.</p>
+              <p class="form__msg form__msg--error" role="alert" hidden>No se ha podido enviar el mensaje. Inténtalo de nuevo o escríbenos a <a href="mailto:hola@mentepsicologiaonline.com">hola@mentepsicologiaonline.com</a>.</p>
+            </form>
+        </div>
       </div>
     </section>
