@@ -71,8 +71,8 @@ build heridas-de-la-infancia-terapia.html esp-heridas.html servicios \
   "Terapia online para sanar heridas de la infancia: abandono, crítica o falta de cuidado que siguen condicionando tu presente. Llamada gratuita."
 
 build gestion-emocional-terapia-online.html esp-gestion.html servicios \
-  "Gestión Emocional · Terapia Online | Mente Psicología" \
-  "Terapia online de gestión emocional: aprende a reconocer, entender y regular tus emociones sin reprimirlas. Enfoque integrador. Llamada gratuita."
+  "Terapia de Gestión Emocional Online | Mente Psicología" \
+  "Terapia online para la gestión y regulación emocional: comprende qué hay detrás de tus emociones cuando te desbordan y aprende a regularlas."
 
 build terapia-duelo-online.html esp-duelo.html servicios \
   "Terapia de Duelo Online · Acompañamiento | Mente Psicología" \
