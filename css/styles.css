@@ -351,6 +351,7 @@ p { margin: 0 0 1em; }
 
 .team h3 { font-size: 1.5rem; }
 .team__role { font-size: .85rem; opacity: .8; margin-bottom: 1rem; }
+.team__spec { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 1.02rem; margin: -.5rem 0 1rem; }
 
 /* FAQ */
 .faq { max-width: 760px; margin-inline: auto; border-top: 1px solid var(--verde); }
@@ -1403,3 +1404,71 @@ html.is-locked { overflow: hidden; }
   .online__cols li { padding: 1.25rem 0; }
   .online__cols li + li { border-left: 0; border-top: 1px solid rgba(78, 91, 92, .3); }
 }
+
+/* PÁGINAS DE ESPECIALIDAD */
+.page-hero__cta { margin-top: 2rem !important; }
+.spec-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 clamp(1.5rem, 3vw, 2.5rem);
+}
+.spec-list li { border-top: 1px solid rgba(78, 91, 92, .35); padding: 1.5rem 0 2rem; }
+.spec-list h3 { font-size: 1.3rem; font-weight: 330; margin-bottom: .6rem; }
+.spec-list h3::before {
+  content: "";
+  display: inline-block;
+  width: .4em; height: .4em;
+  border-radius: 50%;
+  background: #A39A62;
+  margin-right: .6em;
+  vertical-align: .15em;
+}
+.spec-list p { font-size: .92rem; margin: 0; }
+.spec-who {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
+  gap: clamp(1.5rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.spec-who h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin-bottom: .4rem; }
+.spec-who p { max-width: 60ch; }
+.spec-who .btn { margin-top: 1.25rem; }
+@media (max-width: 860px) {
+  .spec-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .spec-who { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .spec-list { grid-template-columns: 1fr; }
+}
+
+/* Especialidades relacionadas (enlaces internos) */
+.spec-related { padding-block: clamp(3rem, 6vw, 4.25rem); }
+.spec-related__list {
+  list-style: none;
+  margin: 1.25rem 0 2rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.spec-related__list li { display: flex; align-items: center; }
+.spec-related__list li + li::before {
+  content: "";
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #A39A62;
+  margin: 0 clamp(.75rem, 2vw, 1.25rem);
+}
+.spec-related__list a {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  text-decoration: none;
+  display: inline-block;
+  transition: color .35s, transform .4s cubic-bezier(.2, .7, .2, 1);
+}
+.spec-related__list a:hover { color: #7A7140; transform: scale(1.05); }
