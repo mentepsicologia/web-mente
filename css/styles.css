@@ -1472,3 +1472,23 @@ html.is-locked { overflow: hidden; }
   transition: color .35s, transform .4s cubic-bezier(.2, .7, .2, 1);
 }
 .spec-related__list a:hover { color: #7A7140; transform: scale(1.05); }
+
+/* Lista breve dentro del texto de una especialidad */
+.spec-bullets { list-style: none; padding: 0; margin: 0 0 1.4rem; border-top: 1px solid rgba(78, 91, 92, .2); }
+.spec-bullets li {
+  font-family: var(--font-serif); font-weight: 330; font-size: 1.08rem;
+  display: flex; align-items: baseline; gap: .7em;
+  padding: .7rem 0; border-bottom: 1px solid rgba(78, 91, 92, .2);
+}
+.spec-bullets li::before {
+  content: ""; flex: none; width: .38em; height: .38em; border-radius: 50%;
+  background: #A39A62; transform: translateY(-.15em);
+}
+
+/* Texto de especialidad en una sola columna centrada */
+.spec-text { max-width: 44rem; margin: 0 auto; }
+.spec-text h2 { text-align: center; font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin: 1rem 0 2.4rem; }
+.spec-text__body p { font-size: 1.05rem; line-height: 1.75; }
+.spec-text .spec-bullets { margin: 1.6rem 0 2rem; }
+.spec-text__body a { text-decoration-color: #A39A62; text-underline-offset: .2em; transition: color .35s; }
+.spec-text__body a:hover { color: #7A7140; }

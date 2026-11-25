@@ -55,11 +55,11 @@ build terapia-apego-online.html esp-apego.html servicios \
   "Terapia online para comprender tu estilo de apego y construir vínculos más seguros. Enfoque integrador en trauma y apego. Primera llamada gratuita."
 
 build psicologa-ansiedad-online.html esp-ansiedad.html servicios \
-  "Psicóloga para la Ansiedad Online | Mente Psicología" \
+  "Psicóloga Online para la Ansiedad | Mente Psicología" \
   "Terapia online para la ansiedad: comprende qué hay detrás de la preocupación y la tensión constante y recupera la calma. Primera llamada gratuita."
 
 build psicologa-depresion-online.html esp-depresion.html servicios \
-  "Psicóloga para la Depresión Online | Mente Psicología" \
+  "Psicóloga Online para la Depresión | Mente Psicología" \
   "Terapia online para la depresión: te acompañamos a entender la tristeza persistente y la falta de energía y a reconectar contigo. Llamada gratuita."
 
 build terapia-autoestima-online.html esp-autoestima.html servicios \
@@ -84,7 +84,7 @@ build dependencia-emocional-terapia-online.html esp-dependencia.html servicios \
 
 build terapia-pareja-online.html esp-pareja.html servicios \
   "Terapia de Pareja Online · Psicóloga de Pareja | Mente" \
-  "Terapia de pareja online con enfoque integrador: comunicación, conflictos que se repiten, distancia o crisis. Individual o en pareja. Llamada gratuita."
+  "Terapia de pareja online con enfoque integrador: comunicación, conflictos que se repiten, distancia, celos o crisis de confianza. Primera llamada gratuita."
 
 # ESPECIALIDADES-FIN
 
