@@ -1614,3 +1614,27 @@ button.sdetail__price { font: inherit; color: inherit; background: transparent; 
 @media (min-width: 761px) and (max-width: 860px) {
   .nav__long { display: none; }
 }
+
+/* Móvil: al bajar se oculta solo la fila del menú (logo y botón siempre visibles) */
+@media (max-width: 760px) {
+  .site-header { position: fixed; top: 0; left: 0; right: 0; transition: box-shadow .5s ease; }
+  body { padding-top: var(--hdr-h, 104px); }
+  .site-header .container .nav {
+    max-height: 4rem;
+    overflow: hidden;
+    transition: max-height .5s ease, opacity .5s ease, padding .5s ease, margin .5s ease;
+  }
+  .site-header.is-hidden .container .nav {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: .6rem;
+    margin-top: 0;
+    pointer-events: none;
+  }
+  .site-header.is-scrolled { box-shadow: 0 6px 18px rgba(40, 50, 50, .08); }
+}
+@media (max-width: 760px) and (min-width: 360px) {
+  .nav a { font-size: clamp(.76rem, 3.4vw, .95rem); }
+  .nav li + li::before { margin: 0 clamp(.38rem, 2vw, 1rem); }
+}

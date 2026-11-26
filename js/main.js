@@ -170,3 +170,36 @@ document.querySelectorAll('.sdetail__price[aria-controls]').forEach((btn) => {
     }
   });
 });
+
+// Móvil: la barra de menú se esconde al bajar y aparece al subir
+(() => {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const mobile = matchMedia('(max-width: 760px)');
+  let lastY = window.scrollY;
+  // Reserva el alto de la barra completa (el menú móvil va fijo arriba)
+  const setHeight = () => {
+    if (header.classList.contains('is-hidden')) return;
+    document.documentElement.style.setProperty('--hdr-h', header.offsetHeight + 'px');
+  };
+  setHeight();
+  window.addEventListener('resize', setHeight);
+  window.addEventListener('load', setHeight);
+  const update = () => {
+    const y = Math.max(window.scrollY, 0);
+    if (!mobile.matches) {
+      header.classList.remove('is-hidden', 'is-scrolled');
+      lastY = y;
+      return;
+    }
+    const delta = y - lastY;
+    if (Math.abs(delta) < 10) return; // ignora movimientos mínimos
+    const pastHeader = y > header.offsetHeight;
+    header.classList.toggle('is-hidden', delta > 0 && pastHeader);
+    header.classList.toggle('is-scrolled', y > 4);
+    lastY = y;
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  // Si se navega con teclado, la barra vuelve a mostrarse
+  header.addEventListener('focusin', () => header.classList.remove('is-hidden'));
+})();
