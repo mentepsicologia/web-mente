@@ -139,3 +139,34 @@ document.querySelectorAll('[data-profile]').forEach((btn) => {
   dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
   dlg.addEventListener('cancel', (e) => { e.preventDefault(); close(); });
 });
+
+// Enlaces a una pregunta concreta (p. ej. dudas.html#tarifas): la abre al llegar
+if (location.hash) {
+  const target = document.querySelector(`details${CSS.escape(location.hash)}`);
+  if (target) target.open = true;
+}
+
+// Servicios: desplegable de tarifas
+document.querySelectorAll('.sdetail__price[aria-controls]').forEach((btn) => {
+  const panel = document.getElementById(btn.getAttribute('aria-controls'));
+  if (!panel) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const opts = { duration: 450, easing: 'cubic-bezier(.4, 0, .2, 1)' };
+  btn.addEventListener('click', () => {
+    if (panel.dataset.animating) return;
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    if (!open) {
+      panel.hidden = false;
+      if (reduce) return;
+      panel.dataset.animating = '1';
+      panel.animate([{ height: '0px', opacity: 0 }, { height: panel.scrollHeight + 'px', opacity: 1 }], opts)
+        .onfinish = () => delete panel.dataset.animating;
+    } else {
+      if (reduce) { panel.hidden = true; return; }
+      panel.dataset.animating = '1';
+      panel.animate([{ height: panel.scrollHeight + 'px', opacity: 1 }, { height: '0px', opacity: 0 }], opts)
+        .onfinish = () => { panel.hidden = true; delete panel.dataset.animating; };
+    }
+  });
+});
