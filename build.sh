@@ -28,6 +28,10 @@ build servicios.html      servicios.html servicios \
   "Terapia Online para Adultos y Pareja | Mente Psicología" \
   "Terapia online individual y de pareja, sexología, psicología perinatal y supervisión para psicólogos. Enfoque integrador en trauma, apego y EMDR."
 
+build tarifas.html        tarifas.html   tarifas \
+  "Tarifas de Terapia Online · Precios y Bonos | Mente" \
+  "Precios de terapia online: sesión individual 65 €, pareja 75 € y bonos de 4 sesiones. Pago por Bizum o transferencia. Primera llamada gratuita."
+
 build sobre-nosotras.html sobre.html     sobre \
   "Sobre Nosotras · Psicólogas Sanitarias Online | Mente" \
   "Mente es un espacio de psicoterapia online cercano y libre de juicios. Enfoque integrador basado en la evidencia: IFS, EMDR y terapia somática."
