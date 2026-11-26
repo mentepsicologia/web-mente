@@ -1492,3 +1492,11 @@ html.is-locked { overflow: hidden; }
 .spec-text .spec-bullets { margin: 1.6rem 0 2rem; }
 .spec-text__body a { text-decoration-color: #A39A62; text-underline-offset: .2em; transition: color .35s; }
 .spec-text__body a:hover { color: #7A7140; }
+
+/* Portada: cada tema del carrusel lleva a su página */
+.marquee__track a {
+  text-decoration: none;
+  display: inline-block;
+  transition: color .35s, transform .4s;
+}
+.marquee__track a:hover, .marquee__track a:focus-visible { color: #7A7140; transform: scale(1.06); }
