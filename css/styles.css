@@ -1253,6 +1253,7 @@ section[id] { scroll-margin-top: 80px; }
   border-left: 2px solid var(--luz);
   max-width: 60ch;
 }
+.faq__a p:has(+ p) { margin-bottom: 0; padding-bottom: .9rem; }
 
 @media (max-width: 860px) {
   .faq-layout { grid-template-columns: 1fr; }
