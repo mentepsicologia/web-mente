@@ -1491,8 +1491,8 @@ html.is-locked { overflow: hidden; }
 .spec-text h2 { text-align: center; font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin: 1rem 0 2.4rem; }
 .spec-text__body p { font-size: 1.05rem; line-height: 1.75; }
 .spec-text .spec-bullets { margin: 1.6rem 0 2rem; }
-.spec-text__body a { text-decoration-color: #A39A62; text-underline-offset: .2em; transition: color .35s; }
-.spec-text__body a:hover { color: #7A7140; }
+.spec-text__body a, .faq__a a { text-decoration-color: #A39A62; text-underline-offset: .2em; transition: color .35s; }
+.spec-text__body a:hover, .faq__a a:hover { color: #7A7140; }
 
 /* Portada: cada tema del carrusel lleva a su página */
 .marquee__track a {
